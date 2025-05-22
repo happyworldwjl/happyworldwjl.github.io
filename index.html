@@ -52,7 +52,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">ToW3D: Consistency-aware Interactive Point-based Mesh Editing on GANs</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
@@ -131,14 +131,7 @@
       <!-- 替换视频为图片 -->
       <img src="static/images/figure1.jpg" alt="Banner Image" style="width:100%; height:auto;">
       <h2 class="subtitle has-text-centered">
-        Qualitative comparison between ToW3D, ToW3D++ and Drag3D (an
-implementation of DragGAN for mesh editing). “Ratio” indicates the current
-stage of the optimization process. We observe that Drag3D induces a gradual
-transformation in appearance while guiding handle points (blue dots) toward
-target points (red dots). Although ToW3D maintains appearance consistency
-during the early stage, it exhibits undesirable deformations when handling
-large deformations. In contrast, ToW3D++ ensures a consistent appearance
-throughout the entire optimization process.
+        Qualitative comparison between ToW3D, ToW3D++ and Drag3D (an implementation of DragGAN for mesh editing). “Ratio” indicates the current stage of the optimization process. We observe that Drag3D induces a gradual transformation in appearance while guiding handle points (blue dots) toward target points (red dots). Although ToW3D maintains appearance consistency during the early stage, it exhibits undesirable deformations when handling large deformations. In contrast, ToW3D++ ensures a consistent appearance throughout the entire optimization process.
       </h2>
     </div>
   </div>
@@ -152,34 +145,7 @@ throughout the entire optimization process.
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            In this paper, we propose ToW3D that enables
-            precise and consistent control over 3D generative adversarial
-            networks (GANs) with the Tug-of-War competition between
-            shape deformation and appearance consistency. Existing pointbased GAN editing methods such as DragGAN and GANWarping
-            have yielded impressive performance for 2D image manipulation.
-            However, as 3D generators present weaker generalization ability
-            compared with 2D due to limited training data, they would
-            suffer from drastic changes in global appearance, including
-            identity and geometry during shape deformation. To address
-            this, we propose a pipeline of “drag locally, shove globally”,
-            which iteratively performs two optimization steps: (1) pull the
-            point towards the target, and (2) push the appearance back to
-            the source. Since it is challenging to obtain guidance signals
-            for plausible deformations at each optimization step, the “shove
-            globally” step in ToW3D adds a fixed constraint throughout the
-            progressive editing sequences to enforce the structure consistent
-            with the initial mesh. However, such constraint severely limits the
-            ability to allow significant geometric changes which is necessary
-            for large mesh deformations. To this end, we further propose
-            ToW3D++ which provides dynamic guidance conditioned on
-            progressively adapting geometric attributes at each optimization
-            step, enabling plausible shape deformations while maintaining the
-            identity of mesh during the optimization process. Specifically, we
-            design a DynDistill module to distill customized fidelity priors for
-            realistic editing outcomes that follows the true data distribution,
-            improving mesh quality while preserving identity. Extensive qualitative and quantitative experiments demonstrate the superiority
-            of our proposed approaches over previous methods, particularly
-            in terms of appeara
+            In this paper, we propose ToW3D that enables precise and consistent control over 3D generative adversarial networks (GANs) with the Tug-of-War competition between shape deformation and appearance consistency. Existing point-based GAN editing methods such as DragGAN and GANWarping have yielded impressive performance for 2D image manipulation. However, as 3D generators present weaker generalization ability compared with 2D due to limited training data, they would suffer from drastic changes in global appearance when editing local areas of meshes. To address this, we design a pipeline of “drag locally, shove globally”, which iteratively performs two optimization steps: 1) pull the point towards the target, and 2) push the structure and semantics back to the source. Specifically, we design a structure adaption module based on structure which guarantees the preservation of basic geometric properties, and a semantic preservation module that maintains semantic similarity across different views. Extensive qualitative and quantitative experiments demonstrate superiority of our ToW3D approach over prior methods in terms of appearance consistency and fidelity especially under large deformations.
           </p>
         </div>
       </div>
@@ -196,31 +162,31 @@ throughout the entire optimization process.
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- Your image here -->
-        <img src="static/images/figure2.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/figure2.jpg" alt="MY ALT TEXT" style="display: block; margin: 0 auto;"/>
         <h2 class="subtitle has-text-centered">
           We have designed a DynDistill module that introduces diffusion models to provide customized guidance, extracts 2D priors conditioned on geometric attributes to achieve large shape deformations, and maintains identity throughout the editing process. Given a mesh, the DynDistill module first renders images from multiple viewpoints. Then, the module optimizes the Lora parameters of the diffusion model by reconstructing the rendered images.
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/figure3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
+        <img src="static/images/figure3.jpg" alt="MY ALT TEXT" style="display: block; margin: 0 auto;"/>
+        <h1 class="subtitle has-text-centered">
           Comparison of Editing Results for Table Category
-        </h2>
+        </h1>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/figure4.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
+        <img src="static/images/figure4.jpg" alt="MY ALT TEXT" style="display: block; margin: 0 auto;"/>
+        <h1 class="subtitle has-text-centered">
           Comparison of Editing Results for Car Category
-       </h2>
+       </h1>
      </div>
      <div class="item">
       <!-- Your image here -->
-      <img src="static/images/figure5.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
+      <img src="static/images/figure5.jpg" alt="MY ALT TEXT" style="display: block; margin: 0 auto;"/>
+      <h1 class="subtitle has-text-centered">
         Examples of Continuous Editing Results
-      </h2>
+      </h1>
     </div>
   </div>
 </div>
